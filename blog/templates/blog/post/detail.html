@@ -2,8 +2,9 @@
 {% block title %}{{post.title}}{% endblock %}
 {% block content %}
     <h1>{{post.title}}</h1>
-       <h2><a href="{{post.get_absolute_url}}">{{post.title}}</a></h2>
-       <p>Published {{post.publish}} By {{post.author}}</p>
-       {{post.body|linebreaks}}
+    <h2><a href="{{post.get_absolute_url}}">{{post.title}}</a></h2>
+    <p>Published {{post.publish}} By {{post.author}}</p>
+    {{post.body|linebreaks}}
+    <p><a href="{% url 'blog:post_share' post.id %}">Share</a></p>
     
 {% endblock %}
